@@ -7,9 +7,9 @@ module.exports = {
 			logo: ["Source Sans Pro"],
 		},
 		colors: {
-			background: "#FEF4EE",
-			primary: "#D3D9EF",
-			secondary: "#DBDEE9",
+			background: "#D1E5FF",
+			primary: "#CC7FE0",
+			secondary: "#CC7FE0",
 			contast: "#403F3E",
 			message: "#f50505",
 		},

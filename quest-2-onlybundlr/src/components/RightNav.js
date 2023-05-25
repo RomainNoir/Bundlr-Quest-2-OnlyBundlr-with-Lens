@@ -17,6 +17,8 @@ const RightNav = () => {
 			"llamablackandwhite.test",
 			"llamafigurine.test",
 			"llamabasquiat.test",
+			"astrocat.test",
+			"spacecat.test",
 		];
 		// Shuffle the order
 		for (let i = profiles.length - 1; i > 0; i--) {

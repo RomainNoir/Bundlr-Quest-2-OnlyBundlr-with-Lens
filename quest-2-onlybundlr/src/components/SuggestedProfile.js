@@ -1,15 +1,19 @@
 import React, { useState, useEffect } from "react";
 import { useProfile } from "@lens-protocol/react";
-
+ 
 const SuggestedProfile = ({ handle }) => {
 	const { data: profile, loading } = useProfile({ handle });
 	const [profilePicture, setProfilePicture] = useState("");
 	const [coverPicture, setCoverPicture] = useState("");
-
+ 
 	useEffect(() => {
-		// BUILDOOOORS: Complete this
+		if (profile) {
+			setProfilePicture(profile.picture?.original.url);
+			setCoverPicture(profile.coverPicture?.original.url);
+			console.log(profile);
+		}
 	}, [loading]);
-
+ 
 	return (
 		<div className="relative" key={profile?.id}>
 			{coverPicture && (
@@ -18,7 +22,7 @@ const SuggestedProfile = ({ handle }) => {
 					src={coverPicture}
 				/>
 			)}
-
+ 
 			<div className="h-32 w-full ">
 				<div className="mx-2 mt-2 flex flex-row bg-secondary opacity-90 rounded-xl">
 					{profilePicture && (
@@ -28,9 +32,12 @@ const SuggestedProfile = ({ handle }) => {
 							alt={handle}
 						/>
 					)}
-
+ 
 					<h2 className="ml-2 self-center">
-						<a className="font-main underline decoration-contast" href={"/" + handle}>
+						<a
+							className="font-main underline decoration-contast"
+							href={"/" + handle}
+						>
 							{handle}
 						</a>
 					</h2>
@@ -39,5 +46,5 @@ const SuggestedProfile = ({ handle }) => {
 		</div>
 	);
 };
-
+ 
 export default SuggestedProfile;
